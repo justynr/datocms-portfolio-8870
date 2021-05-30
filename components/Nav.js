@@ -5,10 +5,12 @@ import NavStyles from './styles/NavStyles';
 export default function Nav() {
   return (
     <NavStyles>
-        <Link href="/products">Products</Link>
-        <Link href="/sell">Sell</Link>
-        <Link href="/orders">Orders</Link>
-        <Link href="/account">Account</Link>
+        <Link href="/">Justyn Roy</Link>
+        <Link href="/work">Work</Link>
+        <Link href="/contact">Contact</Link>
+        <Link href="/services">Services</Link>
+        <Link href="/about">About</Link>
+        <Link href="/resume">Resume</Link>
     </NavStyles>
   );
 }

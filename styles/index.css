@@ -37,6 +37,7 @@
     background-color: var(--darkTheme);
     background-image: url("./background.svg");
     background-repeat: no-repeat;
+    background-size:cover;
     color: var(--fontBody);
 }
   *, *:before, *:after {

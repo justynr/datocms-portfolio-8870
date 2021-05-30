@@ -5,7 +5,7 @@ import NavStyles from './styles/NavStyles';
 export default function Nav() {
   return (
     <NavStyles>
-        <Link href="/">Justyn Roy</Link>
+        <Link href="/">Home</Link>
         <Link href="/work">Work</Link>
         <Link href="/contact">Contact</Link>
         <Link href="/services">Services</Link>

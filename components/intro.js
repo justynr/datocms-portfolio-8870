@@ -22,5 +22,5 @@ export default function Intro() {
         .
       </h4>
     </section>
-  )
+  );
 }

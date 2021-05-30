@@ -19,6 +19,7 @@ const NavStyles = styled.ul`
     background: none;
     border: 0;
     cursor: pointer;
+    color: var(--fontBody);
     @media (max-width: 700px) {
       font-size: 10px;
       padding: 0 10px;

@@ -1,14 +1,14 @@
-import Head from "next/head";
-import { renderMetaTags, useQuerySubscription } from "react-datocms";
-import Container from "../../components/container";
-import Header from "../../components/header";
-import Layout from "../../components/layout";
-import MoreStories from "../../components/more-stories";
-import PostBody from "../../components/post-body";
-import PostHeader from "../../components/post-header";
-import SectionSeparator from "../../components/section-separator";
-import { request } from "../../lib/datocms";
-import { metaTagsFragment, responsiveImageFragment } from "../../lib/fragments";
+import Head from 'next/head';
+import { renderMetaTags, useQuerySubscription } from 'react-datocms';
+import Container from '../../components/container';
+import Header from '../../components/header';
+import Layout from '../../components/layout';
+import MoreStories from '../../components/more-stories';
+import PostBody from '../../components/post-body';
+import PostHeader from '../../components/post-header';
+import SectionSeparator from '../../components/section-separator';
+import { request } from '../../lib/datocms';
+import { metaTagsFragment, responsiveImageFragment } from '../../lib/fragments';
 
 export async function getStaticPaths() {
   const data = await request({ query: `{ allPosts { slug } }` });
@@ -99,7 +99,7 @@ export async function getStaticProps({ params, preview = false }) {
         ? {
             ...graphqlRequest,
             initialData: await request(graphqlRequest),
-            token: process.env.NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN,
+            token: process.env.DATOCMS_API_TOKEN,
           }
         : {
             enabled: false,

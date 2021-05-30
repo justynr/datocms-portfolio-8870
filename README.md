@@ -40,13 +40,13 @@ cp .env.example .env
 
 Then set each variable on `.env`:
 
-- `NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN` should be the API token you just copied.
-- `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode).
+- `DATOCMS_API_TOKEN` should be the API token you just copied.
+- `NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET` can be any random string (but avoid spaces), like `MY_SECRET` - this is used for the Preview Mode](<https://www.datocms.com/docs/next-js/setting-up-next-js-preview-mode>).
 
 Your `.env` file should look like this:
 
 ```bash
-NEXT_EXAMPLE_CMS_DATOCMS_API_TOKEN=...
+DATOCMS_API_TOKEN=...
 NEXT_EXAMPLE_CMS_DATOCMS_PREVIEW_SECRET=...
 ```
 

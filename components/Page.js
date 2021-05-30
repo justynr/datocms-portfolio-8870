@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     --midDarkTheme:#3C00D5;
     --middleTheme: #7A27F4;
     --midLightTheme: #DE12F6;
-    --lightTheme:#57CEF3;
+    --lightTheme:#5DD6F4;
     --fontBody: #F6AEF9;
     --red: #ff0000;
     --lightRed: pink;
@@ -73,7 +73,7 @@ export default function Page({ preview, children }) {
     <>
     <GlobalStyles/>
         <Nav />
-        <main>{children}</main>
+        <InnerStyles>{children}</InnerStyles>
       {/* <Footer /> */}
     </>
   );

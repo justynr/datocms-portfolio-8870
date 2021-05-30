@@ -2,9 +2,11 @@ import Head from 'next/head';
 import { renderMetaTags, useQuerySubscription } from 'react-datocms';
 import Container from '../components/container';
 import HeroPost from '../components/hero-post';
+import Intro from '../components/intro';
 import MoreStories from '../components/more-stories';
 import { request } from '../lib/datocms';
 import { metaTagsFragment, responsiveImageFragment } from '../lib/fragments';
+import { getHomePage } from '../lib/queries'
 
 export async function getStaticProps({ preview }) {
   const graphqlRequest = {
@@ -44,9 +46,11 @@ export async function getStaticProps({ preview }) {
     `,
     preview,
   };
+  var homePage = await getHomePage();
 
   return {
-    props: {
+    props: { 
+      homePage,
       subscription: preview
         ? {
             ...graphqlRequest,
@@ -62,7 +66,7 @@ export async function getStaticProps({ preview }) {
   };
 }
 
-export default function Index({ subscription }) {
+export default function Index({ subscription, homePage }) {
   const {
     data: { allPosts, site, blog },
   } = useQuerySubscription(subscription);
@@ -75,6 +79,15 @@ export default function Index({ subscription }) {
     <>
       <Head>{renderMetaTags(metaTags)}</Head>
       <Container>
+        <Intro homePage={homePage}/>
+        {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+      </Container>
+    </>
+  );
+}
+
+
+/*
         {heroPost && (
           <HeroPost
             title={heroPost.title}
@@ -84,9 +97,4 @@ export default function Index({ subscription }) {
             slug={heroPost.slug}
             excerpt={heroPost.excerpt}
           />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container>
-    </>
-  );
-}
+          */

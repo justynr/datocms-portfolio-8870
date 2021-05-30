@@ -1,6 +1,10 @@
 {
-  "name": "cms-datocms",
+  "name": "portfolio",
   "version": "1.0.0",
+  "description":"Justyn Roy's Portfolio Page",
+  "main": "index.js",
+  "author": "Justyn Roy",
+  "license": "ISC",
   "scripts": {
     "dev": "next",
     "build": "next build",

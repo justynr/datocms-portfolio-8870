@@ -5,6 +5,11 @@
   "main": "index.js",
   "author": "Justyn Roy",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/justynr/datocms-portfolio-8870.git",
+    "private": true
+  },
   "scripts": {
     "dev": "next",
     "build": "next build",

@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import styled, { createGlobalStyle } from 'styled-components';
 
 
-
 const InnerStyles = styled.div`
   max-width: var(--maxWidth);
   margin: 0 auto;
@@ -14,11 +13,9 @@ const InnerStyles = styled.div`
 export default function Page({ preview, children }) {
   return (
     <>
-      <div className="min-h-screen">
         <Nav />
         <main>{children}</main>
-      </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

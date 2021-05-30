@@ -2,8 +2,6 @@ import Head from 'next/head';
 import { renderMetaTags, useQuerySubscription } from 'react-datocms';
 import Container from '../components/container';
 import HeroPost from '../components/hero-post';
-import Intro from '../components/intro';
-import Page from '../components/Page';
 import MoreStories from '../components/more-stories';
 import { request } from '../lib/datocms';
 import { metaTagsFragment, responsiveImageFragment } from '../lib/fragments';
@@ -77,7 +75,6 @@ export default function Index({ subscription }) {
     <>
       <Head>{renderMetaTags(metaTags)}</Head>
       <Container>
-        <Intro />
         {heroPost && (
           <HeroPost
             title={heroPost.title}

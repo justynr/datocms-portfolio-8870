@@ -35,6 +35,8 @@
     box-sizing: border-box;
     font-size: 10px;
     background-color: var(--darkTheme);
+    background-image: url("./background.svg");
+    background-repeat: no-repeat;
     color: var(--fontBody);
 }
   *, *:before, *:after {

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { renderMetaTags, useQuerySubscription } from 'react-datocms';
 import Container from '../../components/container';
 import Header from '../../components/header';
-import Layout from '../../components/layout';
+import Page from '../../components/Page';
 import MoreStories from '../../components/more-stories';
 import PostBody from '../../components/post-body';
 import PostHeader from '../../components/post-header';
@@ -117,7 +117,7 @@ export default function Post({ subscription, preview }) {
   const metaTags = post.seo.concat(site.favicon);
 
   return (
-    <Layout preview={preview}>
+    <Page preview={preview}>
       <Head>{renderMetaTags(metaTags)}</Head>
       <Container>
         <Header />
@@ -133,6 +133,6 @@ export default function Post({ subscription, preview }) {
         <SectionSeparator />
         {morePosts.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
-    </Layout>
+    </Page>
   );
 }

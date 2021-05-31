@@ -3,13 +3,16 @@ import { renderMetaTags, useQuerySubscription } from 'react-datocms';
 import Container from '../components/container';
 import HeroPost from '../components/hero-post';
 import Intro from '../components/intro';
-import Page from '../components/Page';
 import MoreStories from '../components/more-stories';
+import SectionSeparator from '../components/section-separator';
+import WorkSection from '../components/WorkSection';
 import { request } from '../lib/datocms';
 import { metaTagsFragment, responsiveImageFragment } from '../lib/fragments';
+import { getHomePage } from '../lib/queries.js'
 
 export async function getStaticProps({ preview }) {
-  const graphqlRequest = {
+  const graphqlRequest = 
+  {
     query: `
       {
         site: _site {
@@ -46,9 +49,11 @@ export async function getStaticProps({ preview }) {
     `,
     preview,
   };
+  var homePage = await getHomePage();
 
   return {
-    props: {
+    props: { 
+      homePage,
       subscription: preview
         ? {
             ...graphqlRequest,
@@ -64,7 +69,7 @@ export async function getStaticProps({ preview }) {
   };
 }
 
-export default function Index({ subscription }) {
+export default function Index({ subscription, homePage }) {
   const {
     data: { allPosts, site, blog },
   } = useQuerySubscription(subscription);
@@ -77,7 +82,18 @@ export default function Index({ subscription }) {
     <>
       <Head>{renderMetaTags(metaTags)}</Head>
       <Container>
-        <Intro />
+        <Intro homePage={homePage}/>
+        <SectionSeparator/>
+        <WorkSection/>
+
+        {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
+      </Container>
+    </>
+  );
+}
+
+
+/*
         {heroPost && (
           <HeroPost
             title={heroPost.title}
@@ -87,9 +103,4 @@ export default function Index({ subscription }) {
             slug={heroPost.slug}
             excerpt={heroPost.excerpt}
           />
-        )}
-        {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-      </Container>
-    </>
-  );
-}
+          */

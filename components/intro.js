@@ -17,7 +17,6 @@ const Tag = styled.div`
     font-style: normal;
     text-align:center;
     color: var(--lightTheme);
-    padding-top: 0px;
 `;
 
 export default function Intro({homePage}) {

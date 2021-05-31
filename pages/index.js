@@ -4,12 +4,15 @@ import Container from '../components/container';
 import HeroPost from '../components/hero-post';
 import Intro from '../components/intro';
 import MoreStories from '../components/more-stories';
+import SectionSeparator from '../components/section-separator';
+import WorkSection from '../components/WorkSection';
 import { request } from '../lib/datocms';
 import { metaTagsFragment, responsiveImageFragment } from '../lib/fragments';
-import { getHomePage } from '../lib/queries'
+import { getHomePage } from '../lib/queries.js'
 
 export async function getStaticProps({ preview }) {
-  const graphqlRequest = {
+  const graphqlRequest = 
+  {
     query: `
       {
         site: _site {
@@ -80,6 +83,9 @@ export default function Index({ subscription, homePage }) {
       <Head>{renderMetaTags(metaTags)}</Head>
       <Container>
         <Intro homePage={homePage}/>
+        <SectionSeparator/>
+        <WorkSection/>
+
         {/* {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
       </Container>
     </>
